@@ -1,4 +1,4 @@
-  {
+{
   "expo": {
     "name": "employerProject",
     "slug": "employerproject",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -23,6 +21,20 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "fonts": [
+      {
+        "name": "DMRegular",
+        "file": "./assets/fonts/DMSans-Regular.ttf"
+      },
+      {
+        "name": "DMBold",
+        "file": "./assets/fonts/DMSans-Bold.ttf"
+      },
+      {
+        "name": "DMMedium",
+        "file": "./assets/fonts/DMSans-Medium.ttf"
+      }
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     },
@@ -32,8 +44,6 @@
       }
     },
     "owner": "akramjondev",
-    "plugins": [
-      "expo-router"
-    ]
+    "plugins": ["expo-router"]
   }
 }

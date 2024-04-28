@@ -18,7 +18,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="no"
+          name="index"
           component={Welcome}
           options={{
             headerStyle: { backgroundColor: COLORS.lightWhite },
@@ -29,6 +29,7 @@ export default function App() {
             headerRight: () => (
               <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
             ),
+            headerTitle: "",
           }}
         />
       </Stack.Navigator>

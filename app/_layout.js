@@ -1,33 +1,30 @@
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { AppLoading } from "expo";
 import { Stack } from "expo-router";
+import { useFonts } from "expo-font";
+// import * as SplashScreen from "expo-splash-screen";
 
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
+// SplashScreen.preventAutoHideAsync();
 
-import { Welcome } from "./Welcome";
+export const unstable_settings = {
+  // Ensure any route can link back to `/`
+  initialRouteName: "home",
+};
 
-const Stack = createStackNavigator();
-
-SplashScreen.preventAutoHideAsync();
-
-export default function App() {
-  const [fontsLoaded, fontError] = useFonts({
-    DMRegular: require("../assets/fonts/DMSans-Regular.ttf"),
-    DMMedium: require("../assets/fonts/DMSans-Medium.ttf"),
+const Layout = () => {
+  const [fontsLoaded] = useFonts({
     DMBold: require("../assets/fonts/DMSans-Bold.ttf"),
+    DMMedium: require("../assets/fonts/DMSans-Medium.ttf"),
+    DMRegular: require("../assets/fonts/DMSans-Regular.ttf"),
   });
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded || fontError) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  if (!fontsLoaded && !fontError) {
+  if (!fontsLoaded) {
     return null;
   }
 
-  return <Stack onLayout={onLayoutRootView}/>
-}
+  return (
+    <Stack initialRouteName="home">
+      <Stack.Screen name="home" />
+    </Stack>
+  )
+};
+
+export default Layout;
